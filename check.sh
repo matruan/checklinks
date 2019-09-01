@@ -27,7 +27,7 @@ do
     if [ $lenghtHref != 0 ]
     then 
       url=${cadena:$((cont+6)):$lenghtHref};
-      if [ "${url:0:1}" == "/" ]
+      if [ "${url:0:1}" == "/" ] || [ "${url:0:1}" == "." ]
       then
         echo -e "\e[31mAtencion! Enlace relativo\e[0m "$url
         ((enlacesRelativos++))
