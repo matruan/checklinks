@@ -47,13 +47,13 @@ do
 done
 echo
 echo -e "\e[1m"$contEnlaces" enlaces analizados\e[0m"
-paginasEncontradas=$(echo -e $urls | grep -v "HTTP...4.." | wc -l);
+paginasEncontradas=$(echo -e $urls | grep -v "HTTP/.*4.." | wc -l);
 echo -e "\e[1m"$((paginasEncontradas-1))" paginas encontradas\e[0m"
-echo -e $urls | grep -v "HTTP...4.."
+echo -e $urls | grep -v "HTTP/.*4.."
 echo
-paginasNoEncontradas=$(echo -e $urls | grep "HTTP...4.." | wc -l);
+paginasNoEncontradas=$(echo -e $urls | grep "HTTP/.*4.." | wc -l);
 echo -e "\e[31m"$paginasNoEncontradas" paginas no encontradas\e[0m"
-echo -e $urls | grep "HTTP...4.." 
+echo -e $urls | grep "HTTP/.*4.."
 echo
 echo -e "\e[31m"$enlacesVacios" enlaces vacios\e[0m"
 echo
